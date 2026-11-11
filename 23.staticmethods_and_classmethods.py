@@ -46,3 +46,19 @@ try:
 
 except ValueError as e:
     print(e)
+
+'''
+Q: What is the difference between a static method and a class method in Python, 
+and how are they used in the provided code?
+A: 
+In Python, a static method is a method that belongs to a class but does not have access to the 
+instance (self) or class (cls) variables. It is defined using the @staticmethod decorator and is 
+typically used for utility functions that do not require any information about the class or its instances. 
+In the provided code, the `is_valid_transaction` method is a static method that checks if a transaction 
+amount is valid.
+Class methods, on the other hand, are methods that have access to the class itself and can modify class
+-level attributes. They are defined using the @classmethod decorator and take `cls` as the first parameter.
+In the provided code, the `create_savings_account` and `create_business_account` methods
+are class methods that serve as factory methods to create instances of the `BankAccount` class.
+
+'''
