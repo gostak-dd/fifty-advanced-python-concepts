@@ -37,3 +37,11 @@ class Rectangle(Shape):
 shape = Rectangle(5, 10)
 print(shape.area())       
 print(shape.perimeter())
+
+'''
+Q: What is abstract base class (ABC) in Python, and how is it used in the provided code?
+A: An abstract base class (ABC) in Python is a class that cannot be instantiated on its own and is meant to 
+serve as a blueprint for other classes. It defines a set of methods that must be implemented by any 
+subclass that inherits from it. ABCs are defined using the `abc` module, which provides the `ABC` class 
+and the `abstractmethod` decorator.
+'''
