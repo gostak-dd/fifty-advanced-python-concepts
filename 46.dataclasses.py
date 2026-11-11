@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+# from dataclasses import dataclass
 
 # @dataclass
 # class Point:
@@ -11,7 +11,14 @@ from dataclasses import dataclass
 # print(point.y)      # Output: 2
 
 
-
+'''
+Q: What is the purpose of the @dataclass decorator in the Point class?
+A: The purpose of the @dataclass decorator in the Point class is to automatically generate special 
+methods for the class, such as __init__, __repr__, __eq__, and __hash__. This simplifies the creation of 
+classes that are primarily used to store data, reducing boilerplate code and making the class easier 
+to read and maintain. In this case, it allows for easy instantiation of Point objects and provides 
+a clear string representation of the object when printed.
+'''
 
 
 
@@ -63,10 +70,10 @@ from dataclasses import dataclass
 
 
 
-@dataclass(frozen=True)
-class Point:
-    x: int
-    y: int
+# @dataclass(frozen=True)
+# class Point:
+#     x: int
+#     y: int
 
-point = Point(1, 2)
-point.x = 3  # Raises FrozenInstanceError
+# point = Point(1, 2)
+# point.x = 3  # Raises FrozenInstanceError
