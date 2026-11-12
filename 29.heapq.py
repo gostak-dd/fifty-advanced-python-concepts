@@ -52,3 +52,27 @@ if __name__ == "__main__":
 
     # Try to execute with no tasks
     scheduler.execute_task()
+
+'''
+Q: What is heapq in Python? What data structure does it implement, and what are its primary use cases?
+A: The `heapq` module in Python provides an implementation of the heap queue algorithm, also known as the 
+priority queue algorithm. It implements a min-heap data structure, where the smallest element is always at 
+the root of the heap. The primary use cases for `heapq` include implementing priority queues, 
+finding the n largest or n smallest elements in a dataset, and maintaining a collection of items with 
+associated priorities.
+
+Q: What are the time complexities of the primary operations provided by the `heapq` module, such as `heappush`, 
+`heappop`, and `heapify`?
+A: The time complexities of the primary operations provided by the `heapq` module are as follows:
+- `heappush(heap, item)`: O(log n), where n is the number
+    of elements in the heap. This operation adds a new item to the heap while maintaining the heap property.
+- `heappop(heap)`: O(log n), where n is the number of elements in the heap. This operation removes and
+    returns the smallest item from the heap while maintaining the heap property.
+- `heapify(x)`: O(n), where n is the number of elements in the list x. This operation transforms a list into a
+    heap in-place, in linear time.
+
+Q: How can you tranform heapq into a max-heap, given that it is implemented as a min-heap by default?
+A: To transform `heapq` into a max-heap, you can invert the priority of the elements by storing the 
+negative of the values. This way, the smallest (most negative) value will represent the highest 
+priority in the max-heap.
+'''

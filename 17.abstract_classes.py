@@ -32,3 +32,11 @@ rect = Rectangle(4, 5)
 print(rect.area())       # Output: 20
 print(rect.perimeter())  # Output: 18
 print(rect.concrete())
+
+'''
+Q: What is an abstract class in Python, and how is it used in the provided code?
+A: An abstract class in Python is a class that cannot be instantiated on its own and is meant to be 
+subclassed. It can contain abstract methods, which are methods that are declared but contain no 
+implementation. Subclasses of an abstract class must implement all of its abstract methods in order to 
+be instantiated.
+'''

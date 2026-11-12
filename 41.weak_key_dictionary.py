@@ -18,10 +18,20 @@ widget2 = Widget("Button2")
 widget_metadata[widget1] = {"color": "blue", "size": "small"}
 widget_metadata[widget2] = {"color": "red", "size": "large"}
 
-print(widget_metadata)  # Output: {Widget(Button1): {...}, Widget(Button2): {...}}
+print(dict(widget_metadata))  # Output: {Widget(Button1): {...}, Widget(Button2): {...}}
 
 # Remove a strong reference
 del widget1
 
 # The metadata for widget1 is automatically cleaned up
-print([key for key in widget_metadata.keys()])  # Output: {Widget(Button2): {...}}
+print(dict(widget_metadata))  # Output: {Widget(Button2): {...}}
+
+'''
+Q: What is the purpose of using a WeakKeyDictionary in this code?
+A: The purpose of using a WeakKeyDictionary in this code is to store metadata associated with 
+Widget instances without preventing those instances from being garbage collected. When a Widget 
+instance (like widget1) is deleted or goes out of scope, its entry in the WeakKeyDictionary is 
+automatically removed, ensuring that memory is managed efficiently and preventing memory leaks. 
+This allows the program to maintain metadata for active widgets while allowing unused widgets to be 
+cleaned up by the garbage collector.
+'''

@@ -85,3 +85,26 @@ if __name__ == '__main__':
     print('first hypot:', p.hypot)
     print('second hypot (cached):', p.hypot)
     print('instance keys:', list(p.__dict__.keys()))
+
+'''
+Q: What are descriptors in Python, and how do they work in the provided code snippet?
+A: Descriptors in Python are a way to create managed attributes in classes. They are objects 
+that define methods for getting, setting, and deleting an attribute's value. Descriptors work 
+by implementing one or more of the following methods: `__get__`, `__set__`, and `__delete__`. When 
+an attribute is accessed, assigned, or deleted, the corresponding descriptor method is called.
+
+Q: How does the `Typed` descriptor enforce type checking in the provided code snippet?
+A: The `Typed` descriptor enforces type checking by implementing the `__set__` method. When a value is 
+assigned to an attribute managed by the `Typed` descriptor, the `__set__` method checks if the value 
+is an instance of the expected type (specified during the descriptor's initialization). If the value 
+is not of the expected type, it raises a `TypeError`, providing early feedback to the caller. This 
+ensures that only values of the correct type can be assigned to the attribute.
+
+Q: What is the purpose of the `CachedProperty` descriptor in the provided code snippet?
+A: The `CachedProperty` descriptor is designed to compute a value once and then cache it for future access. 
+It implements the `__get__` method, which checks if the value has already been computed and stored in the 
+instance's `__dict__`. If the value has not been computed yet, it calls the associated function to compute 
+the value, stores it in the instance's `__dict__`, and returns it. On subsequent accesses, it retrieves 
+the cached value directly from the instance's `__dict__`, avoiding redundant computations. This is useful 
+for expensive calculations that do not change over time.
+'''
